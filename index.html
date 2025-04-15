@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TypeMe</title>
+</head>
+
+<body>
+    <div class="bloqueo"></div>
+    <div class="menuInicio">
+        <img src="Menu-img/bginicio.png" id="bginicio">
+        <div class="title-container">
+            <img src="Menu-img/Logo.png" alt="Logo">
+        </div>
+        <div class="botones">
+            <button id="btn-op"><span><img src="Menu-img/gear-config.png" alt="gear"></span></button>
+            <button id="btn-play" onclick="play()"><span><img class="backrow" src="Menu-img/play-logo.png" alt="play"
+                        style="margin-left: 8px;"></span></button>
+            <button id="btn-ins"><span><img class="backrow" src="Menu-img/info.png" alt="info"></span></button>
+        </div>
+
+        <div class="option-panel">
+            <div class="op-logo"><img class="logo-engranaje" src="Menu-img/gear-config.png"></div>
+            <div class="difficult-container">
+                <h2>SELECCIONE LA DIFICULTAD</h2>
+                <div class="op-list">
+                    <label class="opcion"><input type="radio" name="difficult" value="easy"
+                            checked><span>Facil</span></label>
+                    <label class="opcion"><input type="radio" name="difficult"
+                            value="normal"><span>Normal</span></label>
+                    <label class="opcion"><input type="radio" name="difficult" value="hard"><span>Dificil</span></label>
+                    <label class="opcion"><input type="radio" name="difficult"
+                            value="impo"><span>Aplastante</span></label>
+                </div>
+            </div>
+            <div class="keyboard-img-container">
+                <img src="Menu-img/Teclado-difficult/Facil.png" alt="keyboard-op" id="imgKeyboard">
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-logo"><img class="logo-info" src="Menu-img/info.png"></div>
+            <div class="info-container">
+                <p>Utilizaras la tecnica de mecanografia al tacto, donde no observaras el teclado y cada tecla esta
+                    asociada a un dedo particular, como se muestra en la imagen.<br><br>El juego consiste en presionar
+                    la mayor cantidad de teclas correctamente posible, si fallas una tecla o el tiempo se acaba, el
+                    juego finaliza.</p>
+            </div>
+            <div class="keyboard-img-info-container">
+                <img src="Menu-img/Info-teclado.jpg" alt="teclado-info">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="game">
+        <div id="ready"><span id="readyNum"></span></div>
+        <div id="lost"></div>
+        <h1 class="title">OJOS EN LA PANTALLA - MANOS EN EL TECLADO</h1>
+        <h2 class="title" id="score">Puntaje: </h2>
+        <div class="keyboard">
+            <ul class="row row-0">
+                <li class="purple" id="|">|</li>
+                <li class="purple" id="1">1</li>
+                <li class="miniblue" id="2">2</li>
+                <li class="middle" id="3">3</li>
+                <li class="pointer1st" id="4">4</li>
+                <li class="pointer2nd" id="5">5</li>
+                <li class="pointer2nd" id="6">6</li>
+                <li class="pointer1st" id="7">7</li>
+                <li class="middle" id="8">8</li>
+                <li class="miniblue" id="9">9</li>
+                <li class="purple" id="0">0</li>
+                <li class="purple" id="'">'</li>
+                <li class="purple" id="¿">¿</li>
+                <li class="purple" id="back">BACK</li>
+            </ul>
+            <ul class="row row-1">
+                <li class="purple" id="tab">TAB</li>
+                <li class="purple" id="Q">Q</li>
+                <li class="miniblue" id="W">W</li>
+                <li class="middle" id="E">E</li>
+                <li class="pointer1st" id="R">R</li>
+                <li class="pointer2nd" id="T">T</li>
+                <li class="pointer2nd" id="Y">Y</li>
+                <li class="pointer1st" id="U">U</li>
+                <li class="middle" id="I">I</li>
+                <li class="miniblue" id="O">O</li>
+                <li class="purple" id="P">P</li>
+                <li class="purple" id="´">´</li>
+                <li class="purple" id="+">+</li>
+                <li class="purple" id="enter">ENTER</li>
+            </ul>
+            <ul class="row row-2">
+                <li class="purple" id="caps">CAPS</li>
+                <li class="purple" id="A">A</li>
+                <li class="miniblue" id="S">S</li>
+                <li class="middle" id="D">D</li>
+                <li class="pointer1st" id="F">F</li>
+                <li class="pointer2nd" id="G">G</li>
+                <li class="pointer2nd" id="H">H</li>
+                <li class="pointer1st" id="J">J</li>
+                <li class="middle" id="K">K</li>
+                <li class="miniblue" id="L">L</li>
+                <li class="purple" id="Ñ">Ñ</li>
+                <li class="purple" id="{">{</li>
+                <li class="purple" id="}">}</li>
+            </ul>
+            <ul class="row row-3">
+                <li class="purple" id="left-shift">SHIFT</li>
+                <li class="purple" id="<"><</li>
+                <li class="purple" id="Z">Z</li>
+                <li class="miniblue" id="X">X</li>
+                <li class="middle" id="C">C</li>
+                <li class="pointer1st" id="V">V</li>
+                <li class="pointer2nd" id="B">B</li>
+                <li class="pointer2nd" id="N">N</li>
+                <li class="pointer1st" id="M">M</li>
+                <li class="middle" id=",">,</li>
+                <li class="miniblue" id=".">.</li>
+                <li class="purple" id="-">-</li>
+                <li class="purple" id="right-shift">SHIFT</li>
+            </ul>
+        </div>
+        <h1 class="title" id="temp">3</h1>
+    </div>
+
+    <div id="lostMenu">
+        <h1>FIN DEL JUEGO</h1>
+        <h3>Tu puntaje fue de: <span id="puntos"></span></h3>
+
+        <div class="actions">
+            <button id="again" onclick="reiniciar()"><span>Volver a Intentarlo</span></button>
+            <button id="volver" onclick="volverMenu()"><span>Menu Principal</span></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
