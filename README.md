@@ -1,4 +1,4 @@
-#TypeMe#
+# TypeMe (Spanish Version)
 
 Disponible en: https://typeme-spanish-lacmyr.netlify.app
 
